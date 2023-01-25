@@ -1,0 +1,59 @@
+@font-face {
+  font-family: raleway;
+  src: url("./fonts/Raleway-Black.ttf");
+}
+
+@font-face {
+  font-family: raleway-light;
+  src: url("./fonts/Raleway-Light.ttf");
+}
+
+.main-text {
+  font-size: 5rem;
+  text-align: center;
+  color: red;
+  width: 100%;
+  font-family: raleway;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.card {
+  position: relative;
+  grid-column: 2 / 3;
+  background-image: url("./img/food2.jpeg");
+  border-radius: 26px;
+  padding: 10px;
+  width: 480px;
+  height: 480px;
+}
+
+.floated-card {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: red;
+  width: 150px;
+  height: 35px;
+}
+
+.floated-card > h1 {
+  position: absolute;
+  top: -8px;
+  left: 32px;
+  font-size: 1.2rem;
+  font-family: raleway-light;
+  color: white;
+}
+
+.floated-card > div {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  z-index: 1;
+}
