@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
     <title>FoodApp</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".click").click(function () {
+          $(".popup-box").css({
+            opacity: "1",
+            "pointer-events": "auto",
+          });
+        });
+        $(".close").click(function () {
+          $(".popup-box").css({
+            opacity: "0",
+            "pointer-events": "none",
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="order-container">
+      <span class="navigation-text"
+        >Inicio > Promociones > Costillas de cerdo * salsa BBQ * Limón
+        personal</span
+      >
+      <div class="card order">
+        <div class="info">
+          <p>Costillas de cerdo * papa criolla * salsa BBQ * limón personal</p>
+        </div>
+        <div class="floated-card">
+          <div>
+            <object data="./img/discount.svg" width="55"></object>
+          </div>
+          <h1>30 % dcto</h1>
+        </div>
+      </div>
+    </div>
+    <h1 class="order-text-main">Ordena Tu Pedido</h1>
+    <div class="form-section">
+      <div class="form-container">
+        <button>
+          <span>Costillas de cerdo</span>
+        </button>
+        <span class="descriptive-text">
+          Costillas de cerdo * papa criolla * salsa BBQ * limón personal + plato
+          y condimentos</span
+        >
+        <div class="before-now">
+          <div class="price-order">
+            <span class="price-before-check"
+              >Antes <del style="color: red">$32.950</del>
+            </span>
+            <span class="price-now-check">Ahora $22.950 </span>
+            <div class="a-line"></div>
+          </div>
+        </div>
+        <div class="edit-order">
+          <form>
+            <h1 class="personalize-order">Personaliza tu selección</h1>
+            <select type="text" class="silverware">
+              <option value="yes" class="yes">
+                Desea incluir cubiertos? (Obligatorio)*
+              </option>
+              <option value="yes">Si</option>
+              <option value="no">No</option>
+            </select>
+            <select type="text" class="drink">
+              <option value="yes">
+                Elige la bebida de tu combo (Obligatorio)*
+              </option>
+              <option value="yes">Si</option>
+              <option value="no">No</option>
+            </select>
+            <textarea
+              name="notes"
+              id=""
+              cols="30"
+              rows="10"
+              class="notes"
+              placeholder="Observaciones"
+            ></textarea>
+            <div class="counter">
+              <span class="minus" style="color: red">-</span>
+              <span class="num">1</span>
+              <span class="plus" style="color: red">+</span>
+            </div>
+            <div class="add-button">
+              <button>
+                <a href="#" class="click">Agregar</a>
+              </button>
+            </div>
+            <div class="popup-box">
+              <a href="" class="close">
+                <img src="./img/red-x-icon.svg" width="44" />
+              </a>
+              <div class="spiner-container">
+                <div class="lds-ring">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <h1 class="order-process">Pedido en camino...</h1>
+              <a href="index.html" class="back-home">Volver a ordenar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const plus = document.querySelector(".plus"),
+        minus = document.querySelector(".minus"),
+        num = document.querySelector(".num");
+
+      let a = 1;
+      plus.addEventListener("click", () => {
+        a++;
+        a = a < 10 ? "" + a : a;
+        num.innerText = a;
+      });
+      minus.addEventListener("click", () => {
+        if (a > 1) {
+          a--;
+          a = a < 10 ? "" + a : a;
+          num.innerText = a;
+        }
+      });
+    </script>
+  </body>
 </html>

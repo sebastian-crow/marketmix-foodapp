@@ -1,0 +1,325 @@
+@keyframes shadow-drop-bl {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.order-text-main {
+  font-size: 5rem;
+  text-align: center;
+  color: red;
+  width: 100%;
+  font-family: raleway;
+}
+
+.order-text-main:hover {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+.order-container {
+  position: absolute;
+  top: 17rem;
+  left: 6rem;
+}
+
+.navigation-text {
+  position: absolute;
+  top: -4rem;
+  left: 2rem;
+  color: red;
+  font-size: 1rem;
+  font-family: raleway-medium;
+  font-weight: bold;
+}
+
+.form-section {
+  position: absolute;
+  left: 41.5rem;
+  top: 15rem;
+  height: 53%;
+  width: 46%;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.form-container > button {
+  position: absolute;
+  width: 100%;
+  top: -1.5rem;
+  grid-row: 1;
+  height: 4.2rem;
+  grid-column: 1 / 4;
+  background: red;
+  color: white;
+  font-size: 1.5rem;
+  font-family: raleway;
+
+  text-transform: uppercase;
+  border-radius: 14px;
+  border: 1px solid white;
+  animation: shadow-drop-bl 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.descriptive-text {
+  position: absolute;
+  top: 4.5rem;
+  grid-column: 1 / 4;
+  margin-left: 12px;
+  grid-row: 2;
+  font-size: 1.4rem;
+  font-family: raleway-light;
+}
+
+.before-now {
+  position: absolute;
+  top: -2.3rem;
+  width: 100%;
+  left: 0;
+  grid-column: 1 / 4;
+  grid-row: 3;
+}
+
+.price-before-check {
+  position: absolute;
+  top: 11.3rem;
+  left: 1.8rem;
+  font-size: 1.7rem;
+  color: black;
+}
+
+.price-now-check {
+  position: absolute;
+  top: 11rem;
+  left: 18rem;
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: red;
+}
+
+.a-line {
+  position: absolute;
+  top: 10.8rem;
+  height: 50px;
+  left: 15rem;
+  border-left: 2px solid red;
+}
+
+.edit-order {
+  position: absolute;
+  top: -2.7rem;
+  width: 100%;
+  grid-column: 1 /4;
+  grid-row: 4;
+}
+
+.personalize-order {
+  position: absolute;
+  top: 15rem;
+  left: 2rem;
+  font-family: raleway;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.silverware {
+  position: absolute;
+  top: 19rem;
+  left: 2rem;
+  width: 92%;
+  height: 35px;
+  border-radius: 6px;
+  border: 2px solid black;
+  font-size: 1rem;
+  font-family: raleway;
+  color: red;
+}
+
+.drink {
+  position: absolute;
+  top: 22rem;
+  left: 2rem;
+  width: 92%;
+  height: 35px;
+  border-radius: 6px;
+  border: 2px solid black;
+  font-size: 1rem;
+  font-family: raleway;
+  color: red;
+}
+
+.notes {
+  position: absolute;
+  top: 25rem;
+  left: 2rem;
+  width: 91%;
+  height: 60px;
+  border-radius: 8px;
+  border: 2px solid black;
+  resize: none;
+  font-size: 1rem;
+  font-family: raleway-light;
+}
+
+.counter {
+  position: absolute;
+  top: 30.5rem;
+  left: 2rem;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter span {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: raleway-medium;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.counter span.num {
+  pointer-events: none;
+}
+
+.add-button {
+  position: absolute;
+  top: 30.5rem;
+  left: 17rem;
+  width: 54.5%;
+  height: 50px;
+}
+
+.add-button button {
+  position: absolute;
+  width: 100%;
+  top: -5px;
+  grid-row: 1;
+  height: 4.2rem;
+  grid-column: 1 / 4;
+  background: red;
+  color: white;
+  font-size: 1.4rem;
+  font-family: raleway;
+
+  text-transform: uppercase;
+  border-radius: 14px;
+  border: 1px solid white;
+  animation: pulsate-fwd 0.9s ease-in-out infinite both;
+}
+
+.add-button button a {
+  text-decoration: none;
+  color: white;
+}
+
+.popup-box {
+  position: absolute;
+  user-select: none;
+  top: 2rem;
+  left: -20rem;
+  width: 45rem;
+  height: 23rem;
+  border-radius: 20px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.close:hover {
+  transform: scale(1.1);
+}
+
+.spiner-container {
+  position: absolute;
+  top: 4rem;
+  left: 20rem;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 6px solid red;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: red transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.order-process {
+  position: absolute;
+  top: 9.5rem;
+  left: 11.5rem;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-family: raleway-light;
+  font-weight: bold;
+  color: black;
+}
+
+.back-home {
+  position: absolute;
+  top: 13.7rem;
+  left: 23rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-family: raleway-medium;
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.back-home:hover {
+  transform: scale(1.1);
+}
