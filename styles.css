@@ -1,3 +1,94 @@
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes pulsate-fwd {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shadow-drop-2-tr {
+  0% {
+    transform: translateZ(0) translateX(0) translateY(0);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    transform: translateZ(50px) translateX(-12px) translateY(12px);
+    box-shadow: 12px -12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes shadow-drop-2-bl {
+  0% {
+    transform: translateZ(0) translateX(0) translateY(0);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    transform: translateZ(50px) translateX(12px) translateY(-12px);
+    box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes shadow-drop-bl {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
 @font-face {
   font-family: raleway;
   src: url("./fonts/Raleway-Black.ttf");
@@ -21,6 +112,10 @@
   font-family: raleway;
 }
 
+.main-text:hover {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -36,6 +131,56 @@
   padding: 10px;
   width: 480px;
   height: 480px;
+  animation: shadow-drop-2-bl 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.card:hover {
+  transform: translateY(20px);
+}
+.card:hover:before {
+  opacity: 60%;
+}
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
+  /* background: rgba(0, 0, 0, 0.6); */
+  background: red;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.card .info {
+  position: relative;
+  z-index: 3;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s;
+}
+.card .info h1 {
+  margin: 0px;
+}
+.card .info p {
+  position: absolute;
+  top: 12rem;
+  left: 4rem;
+  color: white;
+  font-size: 1.3rem;
+  width: 80%;
+  font-family: raleway-medium;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 8px;
 }
 
 .floated-card {
@@ -89,15 +234,20 @@
   right: 40px;
 }
 
+.rhombus_icon {
+  position: absolute;
+  left: 50.8%;
+  top: 1.2rem;
+  fill: white;
+  filter: white;
+}
+
 .text-container {
   position: relative;
   grid-column: 2 / 3;
   grid-row: 2;
   padding: 30px;
-}
-
-.text-info {
-  border: 1px solid white;
+  z-index: 0;
 }
 
 .text-info > h1 {
@@ -110,6 +260,10 @@
   font-family: raleway-medium;
 }
 
+.button-container {
+  animation: shadow-drop-bl 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 .price-order > button {
   position: absolute;
   right: 50px;
@@ -118,6 +272,7 @@
   height: 45px;
   border: 1px solid white;
   background-color: red;
+  animation: pulsate-fwd 0.5s ease-in-out infinite both;
 }
 
 .price-before {
